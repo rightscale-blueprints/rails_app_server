@@ -1,0 +1,10 @@
+{
+  "rails_app": {
+    "repository": {
+      "url":"https://github.com/trotter/rails-hello-world",
+      "revision":"master"
+    },
+    "http_server":"apache2"
+  },
+  "run_list": [ "rails_app" ]
+}

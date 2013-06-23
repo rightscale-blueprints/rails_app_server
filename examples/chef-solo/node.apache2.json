@@ -1,0 +1,6 @@
+{
+  "rails_app": {
+    "http_server":"apache2"
+  },
+  "run_list": [ "rails_app" ]
+}

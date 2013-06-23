@@ -1,0 +1,21 @@
+{
+ "authorization": {
+    "sudo": {
+      "groups": [ "vagrant" ],
+      "users": [ "vagrant" ],
+      "passwordless":"true",
+      "include_sudoers_d":"true"
+    }
+  },
+  "chef": {
+    "solo": {
+      "json": "https://raw.github.com/rightscale-blueprints/linux_server/master/examples/chef-solo/node.json.system_only"
+    }
+  },
+  "librarian": {
+    "chef": {
+      "cheffile": "https://raw.github.com/rightscale-blueprints/linux_node/master/Cheffile.node"
+    }
+  },
+  "run_list": [ "recipe[librarian]", "recipe[chef]", "recipe[chef::configure_chef_solo]", "recipe[chef::run_chef_solo]" ]
+}

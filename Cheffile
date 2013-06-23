@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+#^syntax detection
+
+site 'http://community.opscode.com/api/v1'
+
+cookbook 'application',
+  :git => 'https://github.com/opscode-cookbooks/application',
+  :ref => 'master'
+
+cookbook 'application_ruby',
+  :git => 'https://github.com/opscode-cookbooks/application_ruby',
+  :ref => 'master'
+  
+cookbook 'rails_app',
+  :git => 'https://github.com/flaccid/cookbooks',
+  :path => 'cookbooks/rails_app',
+  :ref => 'ef9a0ec5d929c18f1e1a58bdd6d8f126615f5275'
+
+cookbook 'git',
+  :git => 'https://github.com/opscode-cookbooks/git',
+  :ref => 'master'
