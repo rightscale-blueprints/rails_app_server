@@ -7,15 +7,26 @@ cookbook 'application',
   :git => 'https://github.com/opscode-cookbooks/application',
   :ref => 'master'
 
+# http://tickets.opscode.com/browse/COOK-2079
+# https://github.com/opscode-cookbooks/application_ruby/pull/32
+# https://github.com/opscode-cookbooks/application_ruby/pull/16
 cookbook 'application_ruby',
-  :git => 'https://github.com/opscode-cookbooks/application_ruby',
+  :git => 'https://github.com/flaccid/application_ruby',
   :ref => 'master'
-  
+
 cookbook 'rails_app',
   :git => 'https://github.com/flaccid/cookbooks',
   :path => 'cookbooks/rails_app',
-  :ref => 'ef9a0ec5d929c18f1e1a58bdd6d8f126615f5275'
+  :ref => 'master'
 
+cookbook 'system',
+  :git => 'https://github.com/flaccid/cookbooks',
+  :path => 'cookbooks/system'
+  
 cookbook 'git',
   :git => 'https://github.com/opscode-cookbooks/git',
+  :ref => 'master'
+
+cookbook 'apt',
+  :git => 'https://github.com/opscode-cookbooks/apt',
   :ref => 'master'

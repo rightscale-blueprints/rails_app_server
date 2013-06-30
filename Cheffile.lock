@@ -1,26 +1,39 @@
 SITE
   remote: http://community.opscode.com/api/v1
   specs:
-    apache2 (1.6.2)
+    apache2 (1.6.6)
     build-essential (1.4.0)
     chef_handler (1.1.4)
+    cron (1.2.4)
     dmg (1.1.0)
-    passenger_apache2 (2.0.0)
+    passenger_apache2 (2.0.2)
       apache2 (>= 1.0.4)
       build-essential (>= 0.0.0)
-    runit (1.1.4)
+    runit (1.1.6)
       build-essential (>= 0.0.0)
       yum (>= 0.0.0)
-    unicorn (1.2.2)
+    unicorn (1.3.0)
     windows (1.8.10)
       chef_handler (>= 0.0.0)
-    yum (2.2.2)
+    yum (2.3.0)
+
+GIT
+  remote: https://github.com/flaccid/application_ruby
+  ref: master
+  sha: 4323f32a0e85a3aa752e6464d60f697e693bbef8
+  specs:
+    application_ruby (1.1.5)
+      apache2 (>= 0.0.0)
+      application (>= 0.0.0)
+      passenger_apache2 (>= 0.0.0)
+      runit (~> 1.0)
+      unicorn (>= 0.0.0)
 
 GIT
   remote: https://github.com/flaccid/cookbooks
   path: cookbooks/rails_app
-  ref: ef9a0ec5d929c18f1e1a58bdd6d8f126615f5275
-  sha: ef9a0ec5d929c18f1e1a58bdd6d8f126615f5275
+  ref: master
+  sha: ae99a1f4c56cca4e9481211beb4f9dac588f691f
   specs:
     rails_app (0.1.0)
       application_ruby (>= 0.0.0)
@@ -28,23 +41,27 @@ GIT
       runit (>= 0.0.0)
 
 GIT
-  remote: https://github.com/opscode-cookbooks/application
+  remote: https://github.com/flaccid/cookbooks
+  path: cookbooks/system
   ref: master
-  sha: 9f6bb119ade22dda719bbfecc216065966f06bd9
+  sha: ae99a1f4c56cca4e9481211beb4f9dac588f691f
   specs:
-    application (2.0.3)
+    system (0.0.1)
+      cron (>= 0.0.0)
 
 GIT
-  remote: https://github.com/opscode-cookbooks/application_ruby
+  remote: https://github.com/opscode-cookbooks/application
   ref: master
-  sha: 0790d70fe4b6fa1f3ce569fd86fa3461b1ecd213
+  sha: 7772487d154292940801cf62646b3b4a119bd503
   specs:
-    application_ruby (1.1.3)
-      apache2 (>= 0.0.0)
-      application (>= 0.0.0)
-      passenger_apache2 (>= 0.0.0)
-      runit (~> 1.0)
-      unicorn (>= 0.0.0)
+    application (2.0.5)
+
+GIT
+  remote: https://github.com/opscode-cookbooks/apt
+  ref: master
+  sha: d21e2f6c409105f7fa939fa1ee382c282749888a
+  specs:
+    apt (2.0.1)
 
 GIT
   remote: https://github.com/opscode-cookbooks/git
@@ -61,6 +78,8 @@ GIT
 DEPENDENCIES
   application (>= 0)
   application_ruby (>= 0)
+  apt (>= 0)
   git (>= 0)
   rails_app (>= 0)
+  system (>= 0)
 

@@ -1,3 +1,16 @@
+## v2.3.0:
+
+### New Feature
+
+- [COOK-2924]: Yum should allow type setting in repo file
+
+## v2.2.4:
+
+### Bug
+
+- [COOK-2360]: last commit to `yum_repository` changes previous behaviour
+- [COOK-3015]: Yum cookbook test minitest to fail
+
 ## v2.2.2:
 
 ### Improvement
