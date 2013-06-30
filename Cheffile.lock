@@ -33,7 +33,7 @@ GIT
   remote: https://github.com/flaccid/cookbooks
   path: cookbooks/rails_app
   ref: master
-  sha: 0e3a414287af56d77abf614b11e3b03266a9fbfb
+  sha: 38d81c44a986e94aef7b0feb521fc044b5a110a1
   specs:
     rails_app (0.1.0)
       application_ruby (>= 0.0.0)

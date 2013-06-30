@@ -266,9 +266,7 @@
         "rails_app.basic.conf.erb"
       ],
       "required": "optional",
-      "default": [
-        "rails_app.basic.conf.erb"
-      ],
+      "default": "rails_app.basic.conf.erb",
       "recipes": [
         "rails_app",
         "rails_app::application"
@@ -281,9 +279,6 @@
       "description": "Extra parameters for the apache2 template.",
       "type": "array",
       "required": "optional",
-      "default": [
-        "rails_app.basic.conf.erb"
-      ],
       "recipes": [
         "rails_app",
         "rails_app::application"
