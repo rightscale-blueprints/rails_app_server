@@ -6,7 +6,7 @@
     },
     "gems": [ "bundler" ],
     "bundler":true,
-    "http_server":"apache2"
+    "http_server":"unicorn"
   },
   "run_list": [ "system", "rails_app" ]
 }
