@@ -4,7 +4,9 @@
       "url":"https://github.com/trotter/rails-hello-world",
       "revision":"master"
     },
+    "gems": [ "bundler" ],
+    "bundler":true,
     "http_server":"apache2"
   },
-  "run_list": [ "rails_app" ]
+  "run_list": [ "system", "rails_app" ]
 }
