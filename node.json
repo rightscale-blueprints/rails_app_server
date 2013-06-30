@@ -8,5 +8,8 @@
     "bundler":true,
     "http_server":"unicorn"
   },
+  "system": {
+    "upgrade_packages":false
+  },
   "run_list": [ "system", "rails_app" ]
 }
