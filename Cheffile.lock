@@ -33,7 +33,7 @@ GIT
   remote: https://github.com/flaccid/cookbooks
   path: cookbooks/rails_app
   ref: master
-  sha: 319b697703d7b3e55a5e42e55eda8d99cae97d28
+  sha: f79e993069437514bf3b91f8a937777e48a78caf
   specs:
     rails_app (0.1.0)
       application_ruby (>= 0.0.0)
@@ -44,7 +44,7 @@ GIT
   remote: https://github.com/flaccid/cookbooks
   path: cookbooks/system
   ref: master
-  sha: ae99a1f4c56cca4e9481211beb4f9dac588f691f
+  sha: f79e993069437514bf3b91f8a937777e48a78caf
   specs:
     system (0.0.1)
       cron (>= 0.0.0)

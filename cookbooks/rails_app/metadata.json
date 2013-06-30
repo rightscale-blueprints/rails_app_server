@@ -67,6 +67,20 @@
       "calculated": false,
       "type": "string"
     },
+    "rails_app/packages": {
+      "display_name": "Rails Application Packages",
+      "description": "An array of additional system packages to install for the application.",
+      "required": "optional",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "choice": [
+
+      ],
+      "calculated": false,
+      "type": "string"
+    },
     "rails_app/use_bundler": {
       "display_name": "Rails Application Use Bundler",
       "description": "If true, bundler will always be used; if false it will never be; defaults to true if gems includes bundler.",
@@ -349,7 +363,7 @@
   "groupings": {
   },
   "recipes": {
-    "rails_app": "Includes dependencies and sets up a Ruby on Rails application server.",
+    "rails_app": "Sets up a Ruby on Rails application server.",
     "rails_app::application": "Sets up a Ruby on Rails application server."
   },
   "version": "0.1.0"
