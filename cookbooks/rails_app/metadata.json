@@ -292,7 +292,6 @@
     "rails_app/unicorn/worker_timeout": {
       "display_name": "Unicorn worker timeout",
       "description": "Unicorn worker timeout; default is 60",
-      "default": "60",
       "required": "optional",
       "recipes": [
         "rails_app::default",
@@ -321,7 +320,6 @@
     "rails_app/unicorn/worker_processes": {
       "display_name": "Unicorn worker processes",
       "description": "Number of worker processes to spawn; default is 4",
-      "default": "4",
       "required": "optional",
       "recipes": [
         "rails_app::default",
