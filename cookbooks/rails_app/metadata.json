@@ -1,370 +1,370 @@
 {
-  "name": "rails_app",
-  "description": "Installs/Configures rails_app",
-  "long_description": "rails_app Cookbook\n==================\nTODO: Enter the cookbook description here.\n\ne.g.\nThis cookbook makes your favorite breakfast sandwhich.\n\nRequirements\n------------\nTODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.\n\ne.g.\n#### packages\n- `toaster` - rails_app needs toaster to brown your bagel.\n\nAttributes\n----------\nTODO: List you cookbook attributes here.\n\ne.g.\n#### rails_app::default\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['rails_app']['bacon']</tt></td>\n    <td>Boolean</td>\n    <td>whether to include bacon</td>\n    <td><tt>true</tt></td>\n  </tr>\n</table>\n\nUsage\n-----\n#### rails_app::default\nTODO: Write usage instructions for each cookbook.\n\ne.g.\nJust include `rails_app` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[rails_app]\"\n  ]\n}\n```\n\nContributing\n------------\nTODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.\n\ne.g.\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: TODO: List authors\n",
-  "maintainer": "Chris Fordham",
-  "maintainer_email": "chris@xhost.com.au",
-  "license": "Apache 2.0",
-  "platforms": {
-  },
-  "dependencies": {
-    "application_ruby": ">= 0.0.0",
-    "git": ">= 0.0.0",
-    "runit": ">= 0.0.0"
-  },
   "recommendations": {
   },
-  "suggestions": {
-  },
-  "conflicting": {
-  },
-  "providing": {
-  },
-  "replacing": {
-  },
-  "attributes": {
-    "rails_app/name": {
-      "display_name": "Rails Application Name",
-      "description": "A name for the Ruby on Rails application; default is rails_app.",
-      "default": "rails_app",
-      "required": "recommended",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/path": {
-      "display_name": "Rails Application Path",
-      "description": "The path to deploy the Ruby on Rails application to; default is /usr/local/rails_app.",
-      "default": "/usr/local/rails_app",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/gems": {
-      "display_name": "Rails Application RubyGems",
-      "description": "An array of additional gems to install.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/packages": {
-      "display_name": "Rails Application Packages",
-      "description": "An array of additional system packages to install for the application.",
-      "required": "optional",
-      "type": "array",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false
-    },
-    "rails_app/use_bundler": {
-      "display_name": "Rails Application Use Bundler",
-      "description": "If true, bundler will always be used; if false it will never be; defaults to true if gems includes bundler.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/owner": {
-      "display_name": "Rails Application Owner",
-      "description": "System owner of the deployed application; default is root.",
-      "default": "root",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/group": {
-      "display_name": "Rails Application Group",
-      "description": "System group of the deployed application; default is root.",
-      "default": "root",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/memcached/enabled": {
-      "display_name": "Rails Application Memcached",
-      "description": "Whether to enable memcached; default is false.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/repository/url": {
-      "display_name": "Rails Application URL",
-      "description": "The URL to the application in source control.",
-      "required": "recommended",
-      "default": "https://github.com/trotter/rails-hello-world",
-      "choice": [
-        "https://github.com/rightscale/examples",
-        "https://github.com/trotter/rails-hello-world"
-      ],
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/repository/revision": {
-      "display_name": "Rails Application Revision",
-      "description": "The revision (or git ref) of the application in source control.",
-      "required": "recommended",
-      "default": "master",
-      "choice": [
-        "master",
-        "unified_rails3"
-      ],
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/repository/deploy_key": {
-      "display_name": "Rails Application Deploy Key",
-      "description": "The deploy key for the application in source control.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/database/enable": {
-      "display_name": "Rails Application DB Enable",
-      "description": "Whether to enable configuration of database for the application.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/database/schema": {
-      "display_name": "Rails Application DB Schema",
-      "description": "The schema or name of the database for the application to use.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/database/username": {
-      "display_name": "Rails Application DB Username",
-      "description": "The username of the database for the application to use.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/database/password": {
-      "display_name": "Rails Application DB Password",
-      "description": "The password of the database for the application to use.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/http_server": {
-      "display_name": "Rails Application HTTP Server",
-      "description": "The HTTP server to use for the rails application.",
-      "choice": [
-        "unicorn",
-        "apache2"
-      ],
-      "required": "recommended",
-      "default": "unicorn",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/server_aliases": {
-      "display_name": "Rails Application Server Aliases",
-      "description": "Host aliases to configure with the HTTP server.",
-      "type": "array",
-      "required": "recommended",
-      "default": [
-        "localhost"
-      ],
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false
-    },
-    "rails_app/apache2/webapp_template/file": {
-      "display_name": "Rails Application Apache2 Template",
-      "description": "The name of the Chef template to use with apache2.",
-      "required": "optional",
-      "default": "rails_app.basic.conf.erb",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/apache2/webapp_template/extra_params": {
-      "display_name": "Rails Application Apache2 Template Params",
-      "description": "Extra parameters for the apache2 template.",
-      "type": "array",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false
-    },
-    "rails_app/unicorn/worker_timeout": {
-      "display_name": "Unicorn worker timeout",
-      "description": "Unicorn worker timeout; default is 60",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/unicorn/preload_app": {
-      "display_name": "Unicorn preload app",
-      "description": "Unicorn preload app; default is false",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/unicorn/worker_processes": {
-      "display_name": "Unicorn worker processes",
-      "description": "Number of worker processes to spawn; default is 4",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    },
-    "rails_app/unicorn/before_fork": {
-      "display_name": "Unicorn before fork",
-      "description": "Unicorn before_fork; default is nil.",
-      "required": "optional",
-      "recipes": [
-        "rails_app::default",
-        "rails_app::application"
-      ],
-      "choice": [
-
-      ],
-      "calculated": false,
-      "type": "string"
-    }
-  },
-  "groupings": {
-  },
+  "license": "Apache 2.0",
   "recipes": {
     "rails_app": "Sets up a Ruby on Rails application server.",
     "rails_app::application": "Sets up a Ruby on Rails application server."
   },
-  "version": "0.1.0"
+  "dependencies": {
+    "git": ">= 0.0.0",
+    "application_ruby": ">= 0.0.0",
+    "runit": ">= 0.0.0"
+  },
+  "groupings": {
+  },
+  "maintainer": "Chris Fordham",
+  "long_description": "rails_app Cookbook\n==================\nTODO: Enter the cookbook description here.\n\ne.g.\nThis cookbook makes your favorite breakfast sandwhich.\n\nRequirements\n------------\nTODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.\n\ne.g.\n#### packages\n- `toaster` - rails_app needs toaster to brown your bagel.\n\nAttributes\n----------\nTODO: List you cookbook attributes here.\n\ne.g.\n#### rails_app::default\n<table>\n  <tr>\n    <th>Key</th>\n    <th>Type</th>\n    <th>Description</th>\n    <th>Default</th>\n  </tr>\n  <tr>\n    <td><tt>['rails_app']['bacon']</tt></td>\n    <td>Boolean</td>\n    <td>whether to include bacon</td>\n    <td><tt>true</tt></td>\n  </tr>\n</table>\n\nUsage\n-----\n#### rails_app::default\nTODO: Write usage instructions for each cookbook.\n\ne.g.\nJust include `rails_app` in your node's `run_list`:\n\n```json\n{\n  \"name\":\"my_node\",\n  \"run_list\": [\n    \"recipe[rails_app]\"\n  ]\n}\n```\n\nContributing\n------------\nTODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.\n\ne.g.\n1. Fork the repository on Github\n2. Create a named feature branch (like `add_component_x`)\n3. Write you change\n4. Write tests for your change (if applicable)\n5. Run the tests, ensuring they all pass\n6. Submit a Pull Request using Github\n\nLicense and Authors\n-------------------\nAuthors: TODO: List authors\n",
+  "providing": {
+  },
+  "replacing": {
+  },
+  "platforms": {
+  },
+  "name": "rails_app",
+  "version": "0.1.0",
+  "suggestions": {
+  },
+  "maintainer_email": "chris@xhost.com.au",
+  "description": "Installs/Configures rails_app",
+  "attributes": {
+    "rails_app/gems": {
+      "required": "optional",
+      "type": "array",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application RubyGems",
+      "description": "An array of additional gems to install.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/database/username": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application DB Username",
+      "description": "The username of the database for the application to use.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/unicorn/worker_processes": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Unicorn worker processes",
+      "description": "Number of worker processes to spawn; default is 4",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/database/schema": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application DB Schema",
+      "description": "The schema or name of the database for the application to use.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/path": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Path",
+      "default": "/usr/local/rails_app",
+      "description": "The path to deploy the Ruby on Rails application to; default is /usr/local/rails_app.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/unicorn/worker_timeout": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Unicorn worker timeout",
+      "description": "Unicorn worker timeout; default is 60",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/database/password": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application DB Password",
+      "description": "The password of the database for the application to use.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/memcached/enabled": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Memcached",
+      "description": "Whether to enable memcached; default is false.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/owner": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Owner",
+      "default": "root",
+      "description": "System owner of the deployed application; default is root.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/apache2/webapp_template/extra_params": {
+      "required": "optional",
+      "type": "array",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Apache2 Template Params",
+      "description": "Extra parameters for the apache2 template.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/group": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Group",
+      "default": "root",
+      "description": "System group of the deployed application; default is root.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/unicorn/preload_app": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Unicorn preload app",
+      "description": "Unicorn preload app; default is false",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/apache2/webapp_template/file": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Apache2 Template",
+      "default": "rails_app.basic.conf.erb",
+      "description": "The name of the Chef template to use with apache2.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/http_server": {
+      "required": "recommended",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application HTTP Server",
+      "default": "unicorn",
+      "description": "The HTTP server to use for the rails application.",
+      "calculated": false,
+      "choice": [
+        "unicorn",
+        "apache2"
+      ]
+    },
+    "rails_app/repository/url": {
+      "required": "recommended",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application URL",
+      "default": "https://github.com/trotter/rails-hello-world",
+      "description": "The URL to the application in source control.",
+      "calculated": false,
+      "choice": [
+        "https://github.com/rightscale/examples",
+        "https://github.com/trotter/rails-hello-world"
+      ]
+    },
+    "rails_app/use_bundler": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Use Bundler",
+      "description": "If true, bundler will always be used; if false it will never be; defaults to true if gems includes bundler.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/server_aliases": {
+      "required": "recommended",
+      "type": "array",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Server Aliases",
+      "default": [
+        "localhost"
+      ],
+      "description": "Host aliases to configure with the HTTP server.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/repository/revision": {
+      "required": "recommended",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Revision",
+      "default": "master",
+      "description": "The revision (or git ref) of the application in source control.",
+      "calculated": false,
+      "choice": [
+        "master",
+        "unified_rails3"
+      ]
+    },
+    "rails_app/name": {
+      "required": "recommended",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Name",
+      "default": "rails_app",
+      "description": "A name for the Ruby on Rails application; default is rails_app.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/unicorn/before_fork": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Unicorn before fork",
+      "description": "Unicorn before_fork; default is nil.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/database/enable": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application DB Enable",
+      "description": "Whether to enable configuration of database for the application.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/repository/deploy_key": {
+      "required": "optional",
+      "type": "string",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Deploy Key",
+      "description": "The deploy key for the application in source control.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    },
+    "rails_app/packages": {
+      "required": "optional",
+      "type": "array",
+      "recipes": [
+        "rails_app::default",
+        "rails_app::application"
+      ],
+      "display_name": "Rails Application Packages",
+      "description": "An array of additional system packages to install for the application.",
+      "calculated": false,
+      "choice": [
+
+      ]
+    }
+  },
+  "conflicting": {
+  }
 }
