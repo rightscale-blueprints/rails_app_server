@@ -1,11 +1,15 @@
 {
- "authorization": {
-    "sudo": {
-      "groups": [ "rightscale" ],
-      "users": [ "rightscale" ],
-      "passwordless":"true",
-      "include_sudoers_d":"true"
-    }
-  },  
-  "run_list": [ "recipe[ntp]", "recipe[system]", "recipe[resolver]", "recipe[cron]", "recipe[sudo]" ]
+  "rails_app": {
+    "repository": {
+      "url":"https://github.com/trotter/rails-hello-world",
+      "revision":"master"
+    },
+    "gems": [ "bundler" ],
+    "bundler":true,
+    "http_server":"unicorn"
+  },
+  "system": {
+    "upgrade_packages":false
+  },
+  "run_list": [ "rightscale::enforce_path_sanity", "rightscale::add_sandbox_to_path", "system", "rails_app" ]
 }
